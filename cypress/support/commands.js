@@ -10,27 +10,26 @@
 //
 //
 // -- This is a parent command --
-Cypress.Commands.add("login1", (emailUserOne, passUserOne) => {
-  cy.contains("Log in").click();
-  if (emailUserOne) {
-    cy.get("#mail").type(emailUserOne);
-  }
-  if (passUserOne) {
-    cy.get("#pass").type(passUserOne);
-  }
-  cy.contains("Submit").click();
-});
+Cypress.Commands.add(
+  "login",
+  (emailUserOne, passUserOne, emailUserTwo, passUserTwo) => {
+    cy.contains("Log in").click();
+    if (emailUserOne) {
+      cy.get("#mail").type(emailUserOne);
+    }
+    if (passUserOne) {
+      cy.get("#pass").type(passUserOne);
+    }
+    if (emailUserTwo) {
+      cy.get("#mail").type(emailUserTwo);
+    }
+    if (passUserTwo) {
+      cy.get("#pass").type(passUserTwo);
+    }
 
-Cypress.Commands.add("login2", (emailUserTwo, passUserTwo) => {
-  cy.contains("Log in").click();
-  if (emailUserTwo) {
-    cy.get("#mail").type(emailUserTwo);
+    cy.contains("Submit").click();
   }
-  if (passUserTwo) {
-    cy.get("#pass").type(passUserTwo);
-  }
-  cy.contains("Submit").click();
-});
+);
 
 //
 //
