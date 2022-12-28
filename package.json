@@ -7,7 +7,13 @@
     "test:dev": "cypress open --browser chrome",
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:run": "cypress run",
-    "cypress:open": "cypress open"
+    "cypress:run:laptop": "cypress run --config-file laptop.cypress.config.js --headed --browser electron",
+    "cypress:run:smartphone": "cypress run --config-file smartphone.cypress.config.js --headed --browser chrome",
+    "cypress:run:laptop:headless": "cypress run --config-file laptop.cypress.config.js",
+    "cypress:run:smartphone:headless": "cypress run --config-file smartphone.cypress.config.js",
+    "cypress:open": "cypress open",
+    "cypress:open:laptop": "cypress open --config-file laptop.cypress.config.js",
+    "cypress:open:smartphone": "cypress open --config-file smartphone.cypress.config.js"
   },
   "keywords": [],
   "author": "",

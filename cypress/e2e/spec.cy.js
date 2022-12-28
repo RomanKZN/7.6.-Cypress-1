@@ -42,10 +42,8 @@ describe("Positive http://localhost:3000/ tests", () => {
     cy.get("#title").type("Грозовой перевал");
     cy.get("#description").type("Роман");
     cy.get("#authors").type("Эмили Бронте");
+    cy.get("#favorite").click();
     cy.get("form > .ml-2").click();
-    cy.get(
-      "#root > div > div > div > a:nth-child(1) > div > div.card-footer > button"
-    ).click();
     cy.get("h4").click();
     cy.contains("Эмили Бронте").should("be.visible");
   });
@@ -54,7 +52,9 @@ describe("Positive http://localhost:3000/ tests", () => {
     cy.visit("/");
     cy.login(emailUserOne, passUserOne);
     cy.get("h4").click();
-    cy.get("#root > div > div > a > div > div.card-footer > button").click();
+    cy.get(
+      "#root > div > div > a:nth-child(1) > div > div.card-footer"
+    ).click();
     cy.contains("Please add some book to favorit on home page!").should(
       "be.visible"
     );
